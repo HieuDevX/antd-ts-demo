@@ -5,7 +5,7 @@ import { Button, Radio, Icon } from "antd";
 import { ButtonSize } from "antd/lib/button";
 import { RadioChangeEvent } from "antd/lib/radio/interface";
 
-const ButtonSizeComponent: React.FC = () => {
+const SizeButton: React.FC = () => {
   const initialSize: ButtonSize = "large" as ButtonSize;
   const [size, setSize] = useState(initialSize);
 
@@ -52,4 +52,4 @@ const ButtonSizeComponent: React.FC = () => {
   );
 };
 
-export default ButtonSizeComponent;
+export default SizeButton;
