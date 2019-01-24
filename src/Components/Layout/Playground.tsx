@@ -4,22 +4,18 @@ import { Row, Col, Slider } from "antd";
 import { SliderValue, SliderMarks } from "antd/lib/slider";
 
 const Playground: React.FC = () => {
-  let gutters: {} = {};
-  let colCounts: {} = {};
+  let gutters: number[] = [];
+  let colCounts: number[] = [];
 
   [8, 16, 24, 32, 40, 48].forEach((value, i) => {
-    (gutters as number[])[i] = value;
+    gutters[i] = value;
   });
   [2, 3, 4, 6, 8, 12].forEach((value, i) => {
-    (colCounts as number[])[i] = value;
+    colCounts[i] = value;
   });
 
-  const initialGutterKey = 1 as SliderValue;
-  const initialCountKey = 2 as SliderValue;
-  // which gutters' option was chose
-  const [gutterKey, changeGutterKey] = useState(initialGutterKey);
-  // which columns' option was chose
-  const [colCountKey, changeColCountKey] = useState(initialCountKey);
+  const [gutterKey, changeGutterKey] = useState(1);
+  const [colCountKey, changeColCountKey] = useState(2);
 
   // const initialCols: any[] = [];
   // const [cols, updateCols] = useState(initialCols);
@@ -47,6 +43,15 @@ const Playground: React.FC = () => {
   //   updateColCode(colCode);
   // };
 
+  // useEffect(() => {
+  //   console.log(gutters);
+  //   console.log(colCounts);
+  //   console.log(gutterKey);
+  //   console.log(colCountKey);
+
+  //   updateColumnByColCountKey(colCountKey);
+  // }, []);
+
   const updateColumnByColCountKey = (
     colCountKey: SliderValue
   ): { cols: any[]; colCode: string } => {
@@ -72,25 +77,16 @@ const Playground: React.FC = () => {
     };
   };
 
-  // useEffect(() => {
-  //   console.log(gutters);
-  //   console.log(colCounts);
-  //   console.log(gutterKey);
-  //   console.log(colCountKey);
-
-  //   updateColumnByColCountKey(colCountKey);
-  // }, []);
-
   // handle event gutters slider change
   const handleGutterChange = (value: SliderValue) => {
     console.log(value);
-    changeGutterKey(value);
+    changeGutterKey(value as number);
   };
 
   // handle event columns slider change
   const handleColCountChange = (value: SliderValue) => {
     console.log(value);
-    changeColCountKey(value);
+    changeColCountKey(value as number);
     updateColumnByColCountKey(value);
   };
 
@@ -101,7 +97,7 @@ const Playground: React.FC = () => {
         <div style={{ width: "50%" }}>
           <Slider
             min={0}
-            max={Object.keys(gutters).length - 1}
+            max={gutters.length - 1}
             value={gutterKey}
             onChange={handleGutterChange}
             marks={gutters}
@@ -112,7 +108,7 @@ const Playground: React.FC = () => {
         <div style={{ width: "50%" }}>
           <Slider
             min={0}
-            max={Object.keys(colCounts).length - 1}
+            max={colCounts.length - 1}
             value={colCountKey}
             onChange={handleColCountChange}
             marks={colCounts}
@@ -120,10 +116,10 @@ const Playground: React.FC = () => {
           />
         </div>
       </div>
-      <Row gutter={(gutters as number[])[gutterKey as number]}>
+      <Row gutter={gutters[gutterKey]}>
         {updateColumnByColCountKey(colCountKey).cols}
       </Row>
-      <pre>{`<Row gutter={${(gutters as number[])[gutterKey as number]}}>\n${
+      <pre>{`<Row gutter={${gutters[gutterKey]}}>\n${
         updateColumnByColCountKey(colCountKey).colCode
       }</Row>`}</pre>
     </div>
