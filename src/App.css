@@ -1,7 +1,7 @@
 @import "~antd/dist/antd.css";
 
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -32,7 +32,7 @@
     transform: rotate(360deg);
   }
 }
-
+/* 
 .gutter-example .ant-row > div {
   background: transparent;
   border: 0;
@@ -57,4 +57,52 @@
   border-radius: 6px;
   font-size: 13px;
   padding: 8px 16px;
+} */
+
+/* .ant-layout-header {
+  background: #7dbcea;
+  color: #fff;
+  margin-top: 50px;
+}
+.ant-layout-footer {
+  background: #7dbcea;
+  color: #fff;
+}
+.ant-layout-footer {
+  line-height: 1.5;
+}
+.ant-layout-sider {
+  background: #3ba0e9;
+  color: #fff;
+  line-height: 120px;
+}
+.ant-layout-content {
+  background: rgba(16, 142, 233, 1);
+  color: #fff;
+  min-height: 120px;
+  line-height: 120px;
+} */
+
+#components-layout-demo-side .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
+}
+
+#components-layout-demo-custom-trigger .trigger {
+  font-size: 18px;
+  line-height: 64px;
+  padding: 0 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+#components-layout-demo-custom-trigger .trigger:hover {
+  color: #1890ff;
+}
+
+#components-layout-demo-custom-trigger .logo {
+  height: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 16px;
 }

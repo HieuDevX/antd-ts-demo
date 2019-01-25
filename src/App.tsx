@@ -10,6 +10,10 @@ import BasicGrid from "./Components/Layout/BasicGrid";
 import GridGutter from "./Components/Layout/GridGutter";
 import Playground from "./Components/Layout/Playground";
 import Playground1 from "./Components/Layout/Playground1";
+import BasicStructureLayout from "./Components/Layout/BasicStructureLayout";
+import SiderDemo from "./Components/Layout/SiderDemo";
+import SiderCustomTrigger from "./Components/Layout/SiderCustomTrigger";
+import SiderResponsive from "./Components/Layout/SiderResponsive";
 
 class App extends Component {
   render() {
@@ -24,7 +28,11 @@ class App extends Component {
         {/* <BasicGrid /> */}
         {/* <GridGutter /> */}
         {/* <Playground1 /> */}
-        <Playground />
+        {/* <Playground /> */}
+        {/* <BasicStructureLayout /> */}
+        <SiderDemo />
+        {/* <SiderCustomTrigger /> */}
+        {/* <SiderResponsive /> */}
       </div>
     );
   }
